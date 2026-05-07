@@ -8,7 +8,7 @@ pair<int, int> brent(int first, vector<int>& v) {
 	int uk2 = v[first];
 	int mu = 0, lam = 1;
 	int pw = 1;
-	while (uk1 == uk2) {
+	while (uk1 != uk2) {
 		if (lam == pw) {
 			pw *= 2;
 			uk1 = uk2;
@@ -34,13 +34,12 @@ int main()
 	cin >> n;
 	vector<int>v(n);
 	for (int i = 0; i < n; ++i) {
-		int x; 
-		cin >> x;
+		cin >> v[i];
 	}
 	int first;
 	cin >> first;
 	auto res = brent(first, v);
 	// ----()
 	//mu   la
-	cout << res.first << '  ' << res.second;
+	cout << res.first << ' ' << res.second;
 }
